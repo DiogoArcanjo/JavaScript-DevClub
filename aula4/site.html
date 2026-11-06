@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula04-DevClub</title>
+</head>
+<body>
+    <h1>Conversor de Dòlar</h1>
+    <input placeholder="valor em reais" type="number">
+<button onclick="converter()">Converter</button>
+</body>
+
+<script>
+
+    const valorReal = document.querySelector("input");
+
+    function converter() {
+        document.querySelector('h1').style.color = "blue";
+
+        const valorConvertido = valorReal.value / 5.50 ;
+
+        alert(`O valor convertido é: ${valorConvertido.toFixed(2)} dólares`);
+    }
+
+</script>
+
+</html>
