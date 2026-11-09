@@ -19,3 +19,13 @@
 
 */
 
+
+for (i = 0; i < 10; i++) {
+    console.log(i);
+}
+
+const users = ['João', 'Maria', 'José', 'Pedro', 'Ana']; //legth tamanho do array
+
+for (let i = 0; i < users.length; i++) {
+    console.log(users[i]);
+}
