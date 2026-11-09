@@ -1,4 +1,4 @@
-# 📘 Aula 05 — Estruturas de repetição (for, for...of e for...in)
+# 📘 Aula 05 — Estruturas de repetição (for, for...of, for...in e forEach)
 
 > **Objetivo:** entender como repetir blocos de código e percorrer arrays, strings e objetos.
 
@@ -43,6 +43,7 @@ for (let fruta of frutas) {
 ```
 
 **Resultado:**
+
 ```text
 Maçã
 Banana
@@ -70,6 +71,7 @@ for (let key in user) {
 ```
 
 **Resultado:**
+
 ```text
 name
 age
@@ -85,6 +87,7 @@ for (let key in user) {
 ```
 
 **Resultado:**
+
 ```text
 Diogo
 22
@@ -93,24 +96,66 @@ Rua dos Bobos
 
 ---
 
-## 4. Comparação rápida
+## 4. ForEach
+
+Método utilizado para executar uma função para cada elemento de um array.
+
+**Estrutura:**
+
+```javascript
+array.forEach((element, index) => {
+  // Código executado para cada elemento
+});
+```
+
+**Exemplo:**
+
+```javascript
+const frutas = ["Maçã", "Banana", "Uva"];
+
+frutas.forEach((fruta, index) => {
+  console.log(`${index} - ${fruta}`);
+});
+```
+
+**Resultado:**
+
+```text
+0 - Maçã
+1 - Banana
+2 - Uva
+```
+
+**Parâmetros:**
+
+- `element` → elemento atual do array.
+- `index` → posição do elemento (opcional).
+- `array` → array original (opcional).
+
+> **Atenção:** `forEach` não retorna um novo array e não altera o array original automaticamente.
+
+---
+
+## 5. Comparação rápida
 
 | Estrutura | Utilização |
 |---|---|
 | `for` | Repetições controladas por condição. |
 | `for...of` | Percorrer valores de iteráveis. |
 | `for...in` | Percorrer chaves de objetos. |
+| `forEach` | Executar uma função para cada elemento de um array. |
 
 ---
 
-## 5. Resumo rápido
+## 6. Resumo rápido
 
 - `for` → repete código enquanto uma condição for verdadeira.
 - `for...of` → percorre valores.
 - `for...in` → percorre chaves ou propriedades.
+- `forEach` → executa uma função para cada elemento de um array.
 - `objeto[key]` → acessa o valor de uma propriedade usando sua chave.
 
-> **Dica:** use `for...of` para percorrer arrays e `for...in` para percorrer propriedades de objetos.
+> **Dica:** use `for...of` ou `forEach` para percorrer arrays. Use `for...in` para percorrer propriedades de objetos. Utilize `for` quando precisar controlar manualmente a repetição.
 
 ---
 
