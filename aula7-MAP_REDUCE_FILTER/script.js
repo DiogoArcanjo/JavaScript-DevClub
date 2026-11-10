@@ -18,6 +18,13 @@
                 - Posição Atual
                 - Array Completo
 
+    Filter(filtrar o array)
+      - Cria um novo array
+        - Você tem acesso a 4 dados:
+          - Item por item do array
+          - Posição atual do array
+          - Array completo
+
 */
 
 const produtos = [
@@ -93,7 +100,7 @@ const produtos = [
   },
 ];
 
-// CRIAR UM NOVO ARRAY FORMATANDO A MOEDA E DANDO DESCONTO AOS CLIENTES
+// CRIAR UM NOVO ARRAY FORMATANDO A MOEDA E DANDO DESCONTO AOS CLIENTES --MAP
 const novosProdutos = produtos.map((produto) => {
   const novoPreco = produto.temDesconto ? produto.preco * 0.9 : produto.preco;
 
@@ -111,17 +118,31 @@ const novosProdutos = produtos.map((produto) => {
 
 // console.table(novosProdutos);
 
-// QUAL SERA O FATURAMENTO SE VENDERMOS TODO ESTOQUE?
+// QUAL SERA O FATURAMENTO SE VENDERMOS TODO ESTOQUE? --REDUCE
 
 const totalVendas = produtos.reduce((acumulador, produto) => {
   return acumulador + produto.preco * produto.quantidade;
 }, 0);
 
-console.log(
-  totalVendas.toLocaleString("pt-br", {
-    style: "currency",
-    currency: "BRL",
-  }),
-);
+// console.log(
+//   totalVendas.toLocaleString("pt-br", {
+//     style: "currency",
+//     currency: "BRL",
+//   }),
+// );
 
-//
+// FILTRAR SOMENTE PRODUTOS EM PROMOÇÃO --FILTER
+
+const numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+const pares = numeros.filter((numero) => {
+  return numero % 2 === 0;
+});
+
+// console.log(pares)
+
+// FILTRAR SOMENTES OS PRODUTOS EM PROMOÇÃO --FILTER
+
+const promocao = produtos.filter( produto => produto.temDesconto)
+
+console.log(promocao)
